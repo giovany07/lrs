@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ligon-Razon Solutions – Contact</title>
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="shortcut icon" href="images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+.contact-page-section {
+  padding: 110px 8% 100px;
+  padding-top: 120px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(82, 169, 185, 0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(42, 149, 125, 0.16), transparent 32%),
+    linear-gradient(135deg, #f8fcfc 0%, #eef8f8 35%, #f7fbfb 70%, #ffffff 100%);
+}
+
+.header {
+  padding: 8px 70px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.header .logo img { height: 80px; }
+
+@media (max-width: 900px) {
+  .contact-page-section { padding-top: 100px; }
+  .header { padding: 8px 8%; }
+}
+
+.contact-page-section::before,
+.contact-page-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-page-section::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: -80px;
+  background: rgba(82, 169, 185, 0.20);
+}
+
+.contact-page-section::after {
+  width: 380px;
+  height: 380px;
+  bottom: -120px;
+  left: -60px;
+  background: rgba(42, 149, 125, 0.18);
+}
+
+.contact-container { position: relative; z-index: 2; }
+
+.page-intro {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.page-intro .eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #2A957D;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(82, 169, 185, 0.28);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 24px rgba(42,149,125,0.08);
+}
+
+.page-intro h1 {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.18;
+  color: #000000;
+  max-width: 760px;
+  margin: 0 auto 14px;
+}
+
+.page-intro h1 span {
+  color: #2A957D;
+  font-weight: 400;
+}
+
+.page-intro p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #3f4b4d;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.right-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62));
+  border: 1px solid rgba(82,169,185,0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 40px rgba(42,149,125,0.10);
+  border-radius: 30px;
+}
+
+.contact-info-card {
+  padding: 30px 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card::before,
+.contact-form-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(82,169,185,0.05), rgba(42,149,125,0.05));
+  pointer-events: none;
+}
+
+.contact-info-card h2,
+.contact-form-card h2,
+.map-card h2 {
+  font-size: 28px;
+  color: #000000;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.info-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(82,169,185,0.12);
+  position: relative;
+  z-index: 1;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #52A9B9, #2A957D);
+  box-shadow: 0 12px 24px rgba(42,149,125,0.18);
+  font-size: 18px;
+}
+
+.info-text h3 {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.info-text p,
+.info-text a {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #3f4b4d;
+  text-decoration: none;
+}
+
+.info-text a:hover {
+  color: #2A957D;
+}
+
+.contact-form-card {
+  padding: 28px 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3f4b4d;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.required-mark {
+  color: #2A957D;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid rgba(82,169,185,0.18);
+  background: rgba(255,255,255,0.72);
+  color: #000000;
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #6b7779;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(42,149,125,0.4);
+  box-shadow: 0 0 0 4px rgba(82,169,185,0.10);
+  background: rgba(255,255,255,0.9);
+}
+
+.form-group textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.submit-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #52A9B9, #2A957D);
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(42,149,125,0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(42,149,125,0.24);
+}
+
+.map-card {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.map-card h2 {
+  padding: 6px 8px 0;
+}
+
+.map-frame-wrap {
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(82,169,185,0.16);
+  background: rgba(255,255,255,0.5);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+}
+
+.map-frame-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: 0;
+}
+
+.map-note {
+  padding: 18px 8px 6px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3f4b4d;
+}
+
+@media (max-width: 980px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .contact-page-section { padding: 100px 5%; }
+  .page-intro h1 { font-size: 38px; }
+  .contact-info-card,
+  .contact-form-card,
+  .map-card { padding: 22px 18px; }
+  .contact-info-card h2,
+  .contact-form-card h2,
+  .map-card h2 { font-size: 24px; }
+  .map-frame-wrap iframe { height: 420px; }
+}
+
+@media (max-width: 480px) {
+  .page-intro h1 { font-size: 31px; }
+  .info-item { gap: 12px; }
+  .info-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    font-size: 17px;
+  }
+  .map-frame-wrap iframe { height: 340px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header" style="padding: 8px 70px; background: rgba(0,0,0,0.35); backdrop-filter: blur(12px); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Ligon-Razon Solutions" style="height: 80px;">
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">☰</div>
+
+    <div class="nav-container" id="navContainer">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-contact-item"><a href="contact.html" class="mobile-contact-btn">Contact us</a></li>
+      </ul>
+    </div>
+
+    <a href="contact.html" class="contact-btn">Contact us</a>
+  </nav>
+</header>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="contact-page-section">
+  <div class="contact-container">
+
+    <div class="page-intro fade-up">
+      <span class="eyebrow">get in touch</span>
+      <h1>Let’s connect <span>and build something great</span></h1>
+      <p>Whether you are looking for reliable operational support, team-building solutions, or business transformation services, our team is ready to help you move forward with confidence.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info-card glass-card fade-up">
+        <h2>Contact Information</h2>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+          <div class="info-text">
+            <h3>Office Address</h3>
+            <p>Unit 707, Avida One Park Drive, BGC, Taguig City</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div class="info-text">
+            <h3>Hours</h3>
+            <p>Monday—Friday</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone"></i></div>
+          <div class="info-text">
+            <h3>Phone</h3>
+            <a href="tel:+639688715225">+63 968 871 5225</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <h3>Email</h3>
+            <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-stack">
+        <div class="contact-form-card glass-card fade-up">
+          <h2>Send Us a Message</h2>
+          <p>Fill out the form below and our team will get back to you as soon as possible.</p>
+
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="name">Name <span class="required-mark">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required-mark">*</span></label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="required-mark">*</span></label>
+              <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+
+        <div class="map-card glass-card fade-up">
+          <h2>Our Office Location</h2>
+          <div class="map-frame-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.4387839315124!2d121.05273014510381!3d14.555990482074249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8f45583e559%3A0x2628816a4731720b!2sOne%20Park%20Drive!5e0!3m2!1sen!2sph!4v1774950852880!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="map-note">
+            Visit us at <strong>Unit 707, Avida One Park Drive, BGC, Taguig City</strong>. We look forward to meeting partners, clients, and collaborators who want to grow with the right operational support.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="Ligon-Razon Solutions">
+    </div>
+
+    <div class="footer-column footer-contact">
+      <p>Email: <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+    </div>
+
+    <div class="footer-column footer-social">
+      <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <p class="footer-copyright">© 2026 Ligon-Razon Solutions</p>
+</footer>
+
+<script>
+(function() {
+  const toggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("navContainer");
+  const overlay = document.getElementById("navOverlay");
+
+  function closeMenu() {
+    nav.classList.remove("show");
+    overlay.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+
+  function openMenu() {
+    nav.classList.add("show");
+    overlay.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+
+  toggle.onclick = () => {
+    if (nav.classList.contains("show")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  overlay.onclick = closeMenu;
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  const faders = document.querySelectorAll(".fade-up");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("appear");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  faders.forEach(el => observer.observe(el));
+})();
+</script>
+
+</body>
+</html>
