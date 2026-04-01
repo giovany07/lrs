@@ -26,18 +26,8 @@
     linear-gradient(135deg, #f8fcfc 0%, #eef8f8 35%, #f7fbfb 70%, #ffffff 100%);
 }
 
-.header {
-  padding: 8px 70px;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.header .logo img { height: 80px; }
-
 @media (max-width: 900px) {
   .portfolio-section { padding-top: 100px; }
-  .header { padding: 8px 8%; }
 }
 
 .portfolio-section::before,
@@ -424,10 +414,10 @@
 </head>
 <body>
 
-<header class="header" id="header" style="padding: 8px 70px; background: rgba(0,0,0,0.35); backdrop-filter: blur(12px); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+<header class="header" id="header">
   <nav class="navbar">
     <div class="logo">
-      <img src="images/logo.png" alt="Ligon-Razon Solutions" style="height: 80px;">
+      <img src="images/logo.png" alt="Ligon-Razon Solutions">
     </div>
 
     <div class="menu-toggle" id="menuToggle">☰</div>
