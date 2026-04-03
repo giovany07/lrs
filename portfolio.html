@@ -9,531 +9,163 @@
 <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-.portfolio-section {
-  padding: 110px 8% 100px;
-  padding-top: 120px;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at top right, rgba(82, 169, 185, 0.18), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(42, 149, 125, 0.16), transparent 32%),
-    linear-gradient(135deg, #f8fcfc 0%, #eef8f8 35%, #f7fbfb 70%, #ffffff 100%);
-}
-
-@media (max-width: 900px) {
-  .portfolio-section { padding-top: 100px; }
-}
-
-.portfolio-section::before,
-.portfolio-section::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.portfolio-section::before {
-  width: 420px;
-  height: 420px;
-  top: -120px;
-  right: -80px;
-  background: rgba(82, 169, 185, 0.20);
-}
-
-.portfolio-section::after {
-  width: 380px;
-  height: 380px;
-  bottom: -120px;
-  left: -60px;
-  background: rgba(42, 149, 125, 0.18);
-}
-
-.portfolio-section .section-intro {
-  text-align: center;
-  margin-bottom: 60px;
-  position: relative;
-  z-index: 2;
-}
-
-.portfolio-section .section-intro .eyebrow {
-  display: inline-block;
-  margin-bottom: 18px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #2A957D;
-  background: rgba(255,255,255,0.55);
-  border: 1px solid rgba(82, 169, 185, 0.28);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 10px 24px rgba(42,149,125,0.08);
-}
-
-.portfolio-section .section-intro h2 {
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.18;
-  color: #000000;
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.portfolio-section .section-intro h2 span {
-  color: #2A957D;
-  font-weight: 400;
-}
-
-.category-heading {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin: 60px 0 28px 0;
-  padding: 14px 22px;
-  min-width: 320px;
-  width: auto;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.58);
-  border: 1px solid rgba(82,169,185,0.18);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 14px 30px rgba(42,149,125,0.08);
-  color: #000000;
-  font-size: 30px;
-  font-weight: 600;
-}
-
-.category-heading i {
-  font-size: 26px;
-  color: #52A9B9;
-}
-
-.category-description {
-  position: relative;
-  z-index: 2;
-  margin: -8px 0 34px 0;
-  padding: 28px 26px;
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62));
-  border: 1px solid rgba(82,169,185,0.18);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 18px 40px rgba(42,149,125,0.10);
-}
-
-.category-description p {
-  font-size: 15px;
-  line-height: 1.85;
-  color: #3f4b4d;
-  margin-bottom: 14px;
-}
-
-.category-description p:last-child {
-  margin-bottom: 0;
-}
-
-.category-description strong {
-  color: #000000;
-}
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 30px;
-  margin-bottom: 42px;
-  position: relative;
-  z-index: 2;
-}
-
-.image-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62));
-  border: 1px solid rgba(82,169,185,0.18);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 18px 40px rgba(42,149,125,0.10);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  cursor: pointer;
-}
-
-.image-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(42, 149, 125, 0.30);
-  box-shadow: 0 24px 50px rgba(42,149,125,0.16);
-}
-
-.image-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(82,169,185,0.06), rgba(42,149,125,0.06));
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.image-card:hover::before { opacity: 1; }
-
-.image-placeholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(82,169,185,0.12);
-  background: linear-gradient(135deg, rgba(82,169,185,0.12), rgba(42,149,125,0.12));
-}
-
-.image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.45s ease;
-}
-
-.image-card:hover .image-placeholder img { transform: scale(1.06); }
-
-.image-placeholder .filename {
-  position: absolute;
-  left: 14px;
-  bottom: 14px;
-  z-index: 2;
-  max-width: calc(100% - 28px);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-family: monospace;
-  letter-spacing: 0.4px;
-  color: #FFFFFF;
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.16);
-  backdrop-filter: blur(8px);
-}
-
-.image-placeholder::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0.03), transparent 45%);
-  pointer-events: none;
-}
-
-.image-card .image-caption {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 18px;
-  background: rgba(255,255,255,0.32);
-  position: relative;
-  z-index: 2;
-}
-
-.image-card .image-caption .name {
-  font-size: 14px;
-  font-weight: 500;
-  color: #000000;
-  letter-spacing: 0.2px;
-}
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(245, 252, 252, 0.78);
-  backdrop-filter: blur(12px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-  z-index: 3000;
-}
-
-.lightbox.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.lightbox-content {
-  position: relative;
-  max-width: 92vw;
-  max-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  touch-action: pan-y;
-  user-select: none;
-}
-
-.lightbox-content img {
-  max-width: 100%;
-  max-height: 76vh;
-  border-radius: 20px;
-  display: block;
-  box-shadow: 0 20px 60px rgba(42,149,125,0.18);
-  border: 1px solid rgba(82,169,185,0.16);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: -18px;
-  right: -18px;
-  width: 44px;
-  height: 44px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.85);
-  color: #000000;
-  font-size: 22px;
-  cursor: pointer;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(82,169,185,0.18);
-  transition: 0.25s ease;
-  z-index: 2;
-}
-
-.lightbox-close:hover {
-  background: rgba(82, 169, 185, 0.20);
-  transform: scale(1.06);
-}
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.85);
-  color: #000000;
-  font-size: 24px;
-  cursor: pointer;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(82,169,185,0.18);
-  transition: 0.25s ease;
-  z-index: 2;
-}
-
-.lightbox-nav:hover {
-  background: rgba(82, 169, 185, 0.20);
-  transform: translateY(-50%) scale(1.06);
-}
-
-.lightbox-prev { left: -70px; }
-.lightbox-next { right: -70px; }
-
-.lightbox-meta {
-  margin-top: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-}
-
-.lightbox-caption {
-  color: #000000;
-  font-size: 14px;
-  opacity: 0.95;
-}
-
-.lightbox-filename,
-.lightbox-counter {
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  color: #000000;
-  background: rgba(255,255,255,0.72);
-  border: 1px solid rgba(82,169,185,0.16);
-  backdrop-filter: blur(10px);
-}
-
-@media (max-width: 900px) {
-  .lightbox-prev { left: 10px; }
-  .lightbox-next { right: 10px; }
-  .lightbox-content { width: 100%; }
-}
-
-@media (max-width: 700px) {
-  .portfolio-section { padding: 100px 5%; }
-  .portfolio-section .section-intro h2 { font-size: 36px; }
-  .category-heading {
-    font-size: 23px;
-    min-width: auto;
-    padding: 12px 16px;
-    gap: 12px;
-  }
-  .category-heading i { font-size: 22px; }
-  .image-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-  .lightbox { padding: 16px; }
-  .lightbox-close {
-    top: -12px;
-    right: -4px;
-  }
-  .lightbox-nav {
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .portfolio-section .section-intro h2 { font-size: 31px; }
-  .category-heading {
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
 </head>
 <body>
 
-<header class="header" id="header">
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="Ligon-Razon Solutions">
-    </div>
+<header class="header inner-header" id="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Ligon-Razon Solutions">
+      </div>
 
-    <div class="menu-toggle" id="menuToggle">☰</div>
+      <div class="menu-toggle" id="menuToggle">☰</div>
 
-    <div class="nav-container" id="navContainer">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li class="mobile-contact-item"><a href="contact.html" class="mobile-contact-btn">Contact us</a></li>
-      </ul>
-    </div>
+      <div class="nav-container" id="navContainer">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="mobile-contact-item"><a href="contact.html" class="mobile-contact-btn">Contact us</a></li>
+        </ul>
+      </div>
 
-    <a href="contact.html" class="contact-btn">Contact us</a>
-  </nav>
+      <a href="contact.html" class="contact-btn">Contact us</a>
+    </nav>
+  </div>
 </header>
 
 <div class="nav-overlay" id="navOverlay"></div>
 
-<section class="portfolio-section">
-  <div class="section-intro fade-up">
-    <span class="eyebrow">our work</span>
-    <h2>Creative excellence <span>across every medium</span></h2>
-  </div>
+<main class="page-shell">
+  <section class="section-space">
+    <div class="container">
 
-  <div class="category-heading fade-up">
-    <i class="fas fa-paint-brush"></i> Posters
-  </div>
-  <div class="category-description fade-up">
-    <p><strong>What it is:</strong> A curated collection of poster designs created for promotions, announcements, campaigns, and branded visual storytelling.</p>
-    <p><strong>What we showcase:</strong> Layout composition, typography, color balance, visual hierarchy, and creative direction tailored to different audiences and goals.</p>
-    <p><strong>Why it matters:</strong> Strong poster design helps brands capture attention instantly and communicate messages clearly across digital and print platforms.</p>
-  </div>
-  <div class="image-grid">
-    <div class="image-card fade-up" data-full="images/poster_01.jpg" data-caption="Poster 01" data-file="poster_01.jpg"><div class="image-placeholder"><img src="images/poster_01.jpg" alt="Poster 01"><span class="filename">poster_01.jpg</span></div><div class="image-caption"><span class="name">Poster 01</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_02.jpg" data-caption="Poster 02" data-file="poster_02.jpg"><div class="image-placeholder"><img src="images/poster_02.jpg" alt="Poster 02"><span class="filename">poster_02.jpg</span></div><div class="image-caption"><span class="name">Poster 02</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_03.jpg" data-caption="Poster 03" data-file="poster_03.jpg"><div class="image-placeholder"><img src="images/poster_03.jpg" alt="Poster 03"><span class="filename">poster_03.jpg</span></div><div class="image-caption"><span class="name">Poster 03</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_04.jpg" data-caption="Poster 04" data-file="poster_04.jpg"><div class="image-placeholder"><img src="images/poster_04.jpg" alt="Poster 04"><span class="filename">poster_04.jpg</span></div><div class="image-caption"><span class="name">Poster 04</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_05.jpg" data-caption="Poster 05" data-file="poster_05.jpg"><div class="image-placeholder"><img src="images/poster_05.jpg" alt="Poster 05"><span class="filename">poster_05.jpg</span></div><div class="image-caption"><span class="name">Poster 05</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_06.jpg" data-caption="Poster 06" data-file="poster_06.jpg"><div class="image-placeholder"><img src="images/poster_06.jpg" alt="Poster 06"><span class="filename">poster_06.jpg</span></div><div class="image-caption"><span class="name">Poster 06</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_07.jpg" data-caption="Poster 07" data-file="poster_07.jpg"><div class="image-placeholder"><img src="images/poster_07.jpg" alt="Poster 07"><span class="filename">poster_07.jpg</span></div><div class="image-caption"><span class="name">Poster 07</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_08.jpg" data-caption="Poster 08" data-file="poster_08.jpg"><div class="image-placeholder"><img src="images/poster_08.jpg" alt="Poster 08"><span class="filename">poster_08.jpg</span></div><div class="image-caption"><span class="name">Poster 08</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_09.jpg" data-caption="Poster 09" data-file="poster_09.jpg"><div class="image-placeholder"><img src="images/poster_09.jpg" alt="Poster 09"><span class="filename">poster_09.jpg</span></div><div class="image-caption"><span class="name">Poster 09</span></div></div>
-    <div class="image-card fade-up" data-full="images/poster_10.jpg" data-caption="Poster 10" data-file="poster_10.jpg"><div class="image-placeholder"><img src="images/poster_10.jpg" alt="Poster 10"><span class="filename">poster_10.jpg</span></div><div class="image-caption"><span class="name">Poster 10</span></div></div>
-  </div>
+      <div class="section-intro fade-up">
+        <span class="eyebrow">our work</span>
+        <h2>Creative excellence <span>across every medium</span></h2>
+      </div>
 
-  <div class="category-heading fade-up">
-    <i class="fas fa-cube"></i> Product Branding
-  </div>
-  <div class="category-description fade-up">
-    <p><strong>What it is:</strong> Branding work focused on how products are visually presented to create a memorable and professional identity.</p>
-    <p><strong>What we showcase:</strong> Packaging concepts, label design, product presentation, brand consistency, and visual appeal that supports market positioning.</p>
-    <p><strong>Why it matters:</strong> Effective product branding builds recognition, improves perceived value, and helps products stand out in a competitive market.</p>
-  </div>
-  <div class="image-grid">
-    <div class="image-card fade-up" data-full="images/product_01.jpg" data-caption="Product 01" data-file="product_01.jpg"><div class="image-placeholder"><img src="images/product_01.jpg" alt="Product 01"><span class="filename">product_01.jpg</span></div><div class="image-caption"><span class="name">Product 01</span></div></div>
-    <div class="image-card fade-up" data-full="images/product_02.jpg" data-caption="Product 02" data-file="product_02.jpg"><div class="image-placeholder"><img src="images/product_02.jpg" alt="Product 02"><span class="filename">product_02.jpg</span></div><div class="image-caption"><span class="name">Product 02</span></div></div>
-    <div class="image-card fade-up" data-full="images/product_03.jpg" data-caption="Product 03" data-file="product_03.jpg"><div class="image-placeholder"><img src="images/product_03.jpg" alt="Product 03"><span class="filename">product_03.jpg</span></div><div class="image-caption"><span class="name">Product 03</span></div></div>
-    <div class="image-card fade-up" data-full="images/product_04.jpg" data-caption="Product 04" data-file="product_04.jpg"><div class="image-placeholder"><img src="images/product_04.jpg" alt="Product 04"><span class="filename">product_04.jpg</span></div><div class="image-caption"><span class="name">Product 04</span></div></div>
-    <div class="image-card fade-up" data-full="images/product_05.jpg" data-caption="Product 05" data-file="product_05.jpg"><div class="image-placeholder"><img src="images/product_05.jpg" alt="Product 05"><span class="filename">product_05.jpg</span></div><div class="image-caption"><span class="name">Product 05</span></div></div>
-    <div class="image-card fade-up" data-full="images/product_06.jpg" data-caption="Product 06" data-file="product_06.jpg"><div class="image-placeholder"><img src="images/product_06.jpg" alt="Product 06"><span class="filename">product_06.jpg</span></div><div class="image-caption"><span class="name">Product 06</span></div></div>
-  </div>
+      <div class="portfolio-jump fade-up">
+        <a href="#posters" class="jump-btn">Posters</a>
+        <a href="#product-branding" class="jump-btn">Product Branding</a>
+        <a href="#marketing-materials" class="jump-btn">Marketing Materials</a>
+        <a href="#dashboard-creation" class="jump-btn">Dashboard Creation</a>
+        <a href="#social-media" class="jump-btn">Social Media Creatives</a>
+      </div>
 
-  <div class="category-heading fade-up">
-    <i class="fas fa-bullhorn"></i> Marketing Materials
-  </div>
-  <div class="category-description fade-up">
-    <p><strong>What it is:</strong> A selection of business and promotional assets developed to support marketing campaigns and sales efforts.</p>
-    <p><strong>What we showcase:</strong> Brochures, presentation-ready materials, promotional layouts, and communication pieces designed for clarity and impact.</p>
-    <p><strong>Why it matters:</strong> Well-designed marketing materials strengthen credibility, improve communication, and help businesses present their offers more effectively.</p>
-  </div>
-  <div class="image-grid">
-    <div class="image-card fade-up" data-full="images/marketing_01.jpg" data-caption="Brochure set" data-file="marketing_01.jpg"><div class="image-placeholder"><img src="images/marketing_01.jpg" alt="Brochure set"><span class="filename">marketing_01.jpg</span></div><div class="image-caption"><span class="name">Brochure set</span></div></div>
-  </div>
+      <div id="posters" class="category-heading fade-up">
+        <i class="fas fa-paint-brush"></i> Posters
+      </div>
+      <div class="category-description glass-card fade-up">
+        <p><strong>What it is:</strong> A curated collection of poster designs created for promotions, announcements, campaigns, and branded visual storytelling.</p>
+        <p><strong>What we showcase:</strong> Layout composition, typography, color balance, visual hierarchy, and creative direction tailored to different audiences and goals.</p>
+        <p><strong>Why it matters:</strong> Strong poster design helps brands capture attention instantly and communicate messages clearly across digital and print platforms.</p>
+      </div>
+      <div class="image-grid">
+        <div class="image-card fade-up" data-full="images/poster_01.jpg" data-caption="Poster 01" data-file="poster_01.jpg"><div class="image-placeholder"><img src="images/poster_01.jpg" alt="Poster 01"><span class="filename">poster_01.jpg</span></div><div class="image-caption"><span class="name">Poster 01</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_02.jpg" data-caption="Poster 02" data-file="poster_02.jpg"><div class="image-placeholder"><img src="images/poster_02.jpg" alt="Poster 02"><span class="filename">poster_02.jpg</span></div><div class="image-caption"><span class="name">Poster 02</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_03.jpg" data-caption="Poster 03" data-file="poster_03.jpg"><div class="image-placeholder"><img src="images/poster_03.jpg" alt="Poster 03"><span class="filename">poster_03.jpg</span></div><div class="image-caption"><span class="name">Poster 03</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_04.jpg" data-caption="Poster 04" data-file="poster_04.jpg"><div class="image-placeholder"><img src="images/poster_04.jpg" alt="Poster 04"><span class="filename">poster_04.jpg</span></div><div class="image-caption"><span class="name">Poster 04</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_05.jpg" data-caption="Poster 05" data-file="poster_05.jpg"><div class="image-placeholder"><img src="images/poster_05.jpg" alt="Poster 05"><span class="filename">poster_05.jpg</span></div><div class="image-caption"><span class="name">Poster 05</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_06.jpg" data-caption="Poster 06" data-file="poster_06.jpg"><div class="image-placeholder"><img src="images/poster_06.jpg" alt="Poster 06"><span class="filename">poster_06.jpg</span></div><div class="image-caption"><span class="name">Poster 06</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_07.jpg" data-caption="Poster 07" data-file="poster_07.jpg"><div class="image-placeholder"><img src="images/poster_07.jpg" alt="Poster 07"><span class="filename">poster_07.jpg</span></div><div class="image-caption"><span class="name">Poster 07</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_08.jpg" data-caption="Poster 08" data-file="poster_08.jpg"><div class="image-placeholder"><img src="images/poster_08.jpg" alt="Poster 08"><span class="filename">poster_08.jpg</span></div><div class="image-caption"><span class="name">Poster 08</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_09.jpg" data-caption="Poster 09" data-file="poster_09.jpg"><div class="image-placeholder"><img src="images/poster_09.jpg" alt="Poster 09"><span class="filename">poster_09.jpg</span></div><div class="image-caption"><span class="name">Poster 09</span></div></div>
+        <div class="image-card fade-up" data-full="images/poster_10.jpg" data-caption="Poster 10" data-file="poster_10.jpg"><div class="image-placeholder"><img src="images/poster_10.jpg" alt="Poster 10"><span class="filename">poster_10.jpg</span></div><div class="image-caption"><span class="name">Poster 10</span></div></div>
+      </div>
 
-  <div class="category-heading fade-up">
-    <i class="fas fa-chart-pie"></i> Dashboard Creation
-  </div>
-  <div class="category-description fade-up">
-    <p><strong>What it is:</strong> Custom dashboard solutions that organize business data into clear, usable, and decision-friendly visual formats.</p>
-    <p><strong>What we showcase:</strong> KPI tracking, analytics layouts, reporting structure, data visualization, and user-friendly dashboard presentation.</p>
-    <p><strong>Why it matters:</strong> Dashboards turn raw data into actionable insights, helping teams monitor performance and make faster, smarter decisions.</p>
-  </div>
-  <div class="image-grid">
-    <div class="image-card fade-up" data-full="images/dashboard_01.jpg" data-caption="Sales dashboard" data-file="dashboard_01.jpg"><div class="image-placeholder"><img src="images/dashboard_01.jpg" alt="Sales dashboard"><span class="filename">dashboard_01.jpg</span></div><div class="image-caption"><span class="name">Sales dashboard</span></div></div>
-    <div class="image-card fade-up" data-full="images/dashboard_02.jpg" data-caption="Analytics view" data-file="dashboard_02.jpg"><div class="image-placeholder"><img src="images/dashboard_02.jpg" alt="Analytics view"><span class="filename">dashboard_02.jpg</span></div><div class="image-caption"><span class="name">Analytics view</span></div></div>
-    <div class="image-card fade-up" data-full="images/dashboard_03.jpg" data-caption="KPI dashboard" data-file="dashboard_03.jpg"><div class="image-placeholder"><img src="images/dashboard_03.jpg" alt="KPI dashboard"><span class="filename">dashboard_03.jpg</span></div><div class="image-caption"><span class="name">KPI dashboard</span></div></div>
-  </div>
+      <div id="product-branding" class="category-heading fade-up">
+        <i class="fas fa-cube"></i> Product Branding
+      </div>
+      <div class="category-description glass-card fade-up">
+        <p><strong>What it is:</strong> Branding work focused on how products are visually presented to create a memorable and professional identity.</p>
+        <p><strong>What we showcase:</strong> Packaging concepts, label design, product presentation, brand consistency, and visual appeal that supports market positioning.</p>
+        <p><strong>Why it matters:</strong> Effective product branding builds recognition, improves perceived value, and helps products stand out in a competitive market.</p>
+      </div>
+      <div class="image-grid">
+        <div class="image-card fade-up" data-full="images/product_01.jpg" data-caption="Product 01" data-file="product_01.jpg"><div class="image-placeholder"><img src="images/product_01.jpg" alt="Product 01"><span class="filename">product_01.jpg</span></div><div class="image-caption"><span class="name">Product 01</span></div></div>
+        <div class="image-card fade-up" data-full="images/product_02.jpg" data-caption="Product 02" data-file="product_02.jpg"><div class="image-placeholder"><img src="images/product_02.jpg" alt="Product 02"><span class="filename">product_02.jpg</span></div><div class="image-caption"><span class="name">Product 02</span></div></div>
+        <div class="image-card fade-up" data-full="images/product_03.jpg" data-caption="Product 03" data-file="product_03.jpg"><div class="image-placeholder"><img src="images/product_03.jpg" alt="Product 03"><span class="filename">product_03.jpg</span></div><div class="image-caption"><span class="name">Product 03</span></div></div>
+        <div class="image-card fade-up" data-full="images/product_04.jpg" data-caption="Product 04" data-file="product_04.jpg"><div class="image-placeholder"><img src="images/product_04.jpg" alt="Product 04"><span class="filename">product_04.jpg</span></div><div class="image-caption"><span class="name">Product 04</span></div></div>
+        <div class="image-card fade-up" data-full="images/product_05.jpg" data-caption="Product 05" data-file="product_05.jpg"><div class="image-placeholder"><img src="images/product_05.jpg" alt="Product 05"><span class="filename">product_05.jpg</span></div><div class="image-caption"><span class="name">Product 05</span></div></div>
+        <div class="image-card fade-up" data-full="images/product_06.jpg" data-caption="Product 06" data-file="product_06.jpg"><div class="image-placeholder"><img src="images/product_06.jpg" alt="Product 06"><span class="filename">product_06.jpg</span></div><div class="image-caption"><span class="name">Product 06</span></div></div>
+      </div>
 
-  <div class="category-heading fade-up">
-    <i class="fas fa-hashtag"></i> Social Media Creatives
-  </div>
-  <div class="category-description fade-up">
-    <p><strong>What it is:</strong> Creative assets designed for social media platforms to support branding, engagement, and campaign visibility.</p>
-    <p><strong>What we showcase:</strong> Platform-specific post designs, ad creatives, story graphics, thumbnails, covers, and branded content visuals.</p>
-    <p><strong>Why it matters:</strong> High-quality social media creatives help brands stay relevant, capture audience interest, and maintain a strong digital presence.</p>
-  </div>
-  <div class="image-grid">
-    <div class="image-card fade-up" data-full="images/social_01.jpg" data-caption="IG post 01" data-file="social_01.jpg"><div class="image-placeholder"><img src="images/social_01.jpg" alt="IG post 01"><span class="filename">social_01.jpg</span></div><div class="image-caption"><span class="name">IG post 01</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_02.jpg" data-caption="IG post 02" data-file="social_02.jpg"><div class="image-placeholder"><img src="images/social_02.jpg" alt="IG post 02"><span class="filename">social_02.jpg</span></div><div class="image-caption"><span class="name">IG post 02</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_03.jpg" data-caption="FB ad 01" data-file="social_03.jpg"><div class="image-placeholder"><img src="images/social_03.jpg" alt="FB ad 01"><span class="filename">social_03.jpg</span></div><div class="image-caption"><span class="name">FB ad 01</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_04.jpg" data-caption="LinkedIn post" data-file="social_04.jpg"><div class="image-placeholder"><img src="images/social_04.jpg" alt="LinkedIn post"><span class="filename">social_04.jpg</span></div><div class="image-caption"><span class="name">LinkedIn post</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_05.jpg" data-caption="TikTok cover" data-file="social_05.jpg"><div class="image-placeholder"><img src="images/social_05.jpg" alt="TikTok cover"><span class="filename">social_05.jpg</span></div><div class="image-caption"><span class="name">TikTok cover</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_06.jpg" data-caption="Pin graphic" data-file="social_06.jpg"><div class="image-placeholder"><img src="images/social_06.jpg" alt="Pin graphic"><span class="filename">social_06.jpg</span></div><div class="image-caption"><span class="name">Pin graphic</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_07.jpg" data-caption="Story 01" data-file="social_07.jpg"><div class="image-placeholder"><img src="images/social_07.jpg" alt="Story 01"><span class="filename">social_07.jpg</span></div><div class="image-caption"><span class="name">Story 01</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_08.jpg" data-caption="Reel cover" data-file="social_08.jpg"><div class="image-placeholder"><img src="images/social_08.jpg" alt="Reel cover"><span class="filename">social_08.jpg</span></div><div class="image-caption"><span class="name">Reel cover</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_09.jpg" data-caption="X post" data-file="social_09.jpg"><div class="image-placeholder"><img src="images/social_09.jpg" alt="X post"><span class="filename">social_09.jpg</span></div><div class="image-caption"><span class="name">X post</span></div></div>
-    <div class="image-card fade-up" data-full="images/social_10.jpg" data-caption="YT thumbnail" data-file="social_10.jpg"><div class="image-placeholder"><img src="images/social_10.jpg" alt="YT thumbnail"><span class="filename">social_10.jpg</span></div><div class="image-caption"><span class="name">YT thumbnail</span></div></div>
-  </div>
-</section>
+      <div id="marketing-materials" class="category-heading fade-up">
+        <i class="fas fa-bullhorn"></i> Marketing Materials
+      </div>
+      <div class="category-description glass-card fade-up">
+        <p><strong>What it is:</strong> A selection of business and promotional assets developed to support marketing campaigns and sales efforts.</p>
+        <p><strong>What we showcase:</strong> Brochures, presentation-ready materials, promotional layouts, and communication pieces designed for clarity and impact.</p>
+        <p><strong>Why it matters:</strong> Well-designed marketing materials strengthen credibility, improve communication, and help businesses present their offers more effectively.</p>
+      </div>
+      <div class="image-grid">
+        <div class="image-card fade-up" data-full="images/marketing_01.jpg" data-caption="Brochure set" data-file="marketing_01.jpg"><div class="image-placeholder"><img src="images/marketing_01.jpg" alt="Brochure set"><span class="filename">marketing_01.jpg</span></div><div class="image-caption"><span class="name">Brochure set</span></div></div>
+      </div>
+
+      <div id="dashboard-creation" class="category-heading fade-up">
+        <i class="fas fa-chart-pie"></i> Dashboard Creation
+      </div>
+      <div class="category-description glass-card fade-up">
+        <p><strong>What it is:</strong> Custom dashboard solutions that organize business data into clear, usable, and decision-friendly visual formats.</p>
+        <p><strong>What we showcase:</strong> KPI tracking, analytics layouts, reporting structure, data visualization, and user-friendly dashboard presentation.</p>
+        <p><strong>Why it matters:</strong> Dashboards turn raw data into actionable insights, helping teams monitor performance and make faster, smarter decisions.</p>
+      </div>
+      <div class="image-grid">
+        <div class="image-card fade-up" data-full="images/dashboard_01.jpg" data-caption="Sales dashboard" data-file="dashboard_01.jpg"><div class="image-placeholder"><img src="images/dashboard_01.jpg" alt="Sales dashboard"><span class="filename">dashboard_01.jpg</span></div><div class="image-caption"><span class="name">Sales dashboard</span></div></div>
+        <div class="image-card fade-up" data-full="images/dashboard_02.jpg" data-caption="Analytics view" data-file="dashboard_02.jpg"><div class="image-placeholder"><img src="images/dashboard_02.jpg" alt="Analytics view"><span class="filename">dashboard_02.jpg</span></div><div class="image-caption"><span class="name">Analytics view</span></div></div>
+        <div class="image-card fade-up" data-full="images/dashboard_03.jpg" data-caption="KPI dashboard" data-file="dashboard_03.jpg"><div class="image-placeholder"><img src="images/dashboard_03.jpg" alt="KPI dashboard"><span class="filename">dashboard_03.jpg</span></div><div class="image-caption"><span class="name">KPI dashboard</span></div></div>
+      </div>
+
+      <div id="social-media" class="category-heading fade-up">
+        <i class="fas fa-hashtag"></i> Social Media Creatives
+      </div>
+      <div class="category-description glass-card fade-up">
+        <p><strong>What it is:</strong> Creative assets designed for social media platforms to support branding, engagement, and campaign visibility.</p>
+        <p><strong>What we showcase:</strong> Platform-specific post designs, ad creatives, story graphics, thumbnails, covers, and branded content visuals.</p>
+        <p><strong>Why it matters:</strong> High-quality social media creatives help brands stay relevant, capture audience interest, and maintain a strong digital presence.</p>
+      </div>
+      <div class="image-grid">
+        <div class="image-card fade-up" data-full="images/social_01.jpg" data-caption="IG post 01" data-file="social_01.jpg"><div class="image-placeholder"><img src="images/social_01.jpg" alt="IG post 01"><span class="filename">social_01.jpg</span></div><div class="image-caption"><span class="name">IG post 01</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_02.jpg" data-caption="IG post 02" data-file="social_02.jpg"><div class="image-placeholder"><img src="images/social_02.jpg" alt="IG post 02"><span class="filename">social_02.jpg</span></div><div class="image-caption"><span class="name">IG post 02</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_03.jpg" data-caption="FB ad 01" data-file="social_03.jpg"><div class="image-placeholder"><img src="images/social_03.jpg" alt="FB ad 01"><span class="filename">social_03.jpg</span></div><div class="image-caption"><span class="name">FB ad 01</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_04.jpg" data-caption="LinkedIn post" data-file="social_04.jpg"><div class="image-placeholder"><img src="images/social_04.jpg" alt="LinkedIn post"><span class="filename">social_04.jpg</span></div><div class="image-caption"><span class="name">LinkedIn post</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_05.jpg" data-caption="TikTok cover" data-file="social_05.jpg"><div class="image-placeholder"><img src="images/social_05.jpg" alt="TikTok cover"><span class="filename">social_05.jpg</span></div><div class="image-caption"><span class="name">TikTok cover</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_06.jpg" data-caption="Pin graphic" data-file="social_06.jpg"><div class="image-placeholder"><img src="images/social_06.jpg" alt="Pin graphic"><span class="filename">social_06.jpg</span></div><div class="image-caption"><span class="name">Pin graphic</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_07.jpg" data-caption="Story 01" data-file="social_07.jpg"><div class="image-placeholder"><img src="images/social_07.jpg" alt="Story 01"><span class="filename">social_07.jpg</span></div><div class="image-caption"><span class="name">Story 01</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_08.jpg" data-caption="Reel cover" data-file="social_08.jpg"><div class="image-placeholder"><img src="images/social_08.jpg" alt="Reel cover"><span class="filename">social_08.jpg</span></div><div class="image-caption"><span class="name">Reel cover</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_09.jpg" data-caption="X post" data-file="social_09.jpg"><div class="image-placeholder"><img src="images/social_09.jpg" alt="X post"><span class="filename">social_09.jpg</span></div><div class="image-caption"><span class="name">X post</span></div></div>
+        <div class="image-card fade-up" data-full="images/social_10.jpg" data-caption="YT thumbnail" data-file="social_10.jpg"><div class="image-placeholder"><img src="images/social_10.jpg" alt="YT thumbnail"><span class="filename">social_10.jpg</span></div><div class="image-caption"><span class="name">YT thumbnail</span></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass-card fade-up">
+        <h2>Want to see how we can support your brand visually and operationally?</h2>
+        <p>Let’s discuss how our creative and business support solutions can help strengthen your presence, systems, and growth strategy.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="cta-btn">Start the Conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <div class="lightbox" id="lightbox">
   <div class="lightbox-content">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
     <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+
     <div class="lightbox-main" id="lightboxMain">
       <img id="lightboxImg" src="" alt="Expanded portfolio image">
       <div class="lightbox-meta">
@@ -542,27 +174,34 @@
         <div class="lightbox-counter" id="lightboxCounter"></div>
       </div>
     </div>
+
     <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
   </div>
 </div>
 
 <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="Ligon-Razon Solutions">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Ligon-Razon Solutions">
+      </div>
+
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a></p>
+        <p>Phone: <a href="tel:+639688715225">+63 968 871 5225</a></p>
+        <p>Office: Unit 707, Avida One Park Drive, BGC, Taguig City</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
-    <div class="footer-column footer-contact">
-      <p>Email: <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a></p>
-      <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-    </div>
-    <div class="footer-column footer-social">
-      <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
+
+    <p class="footer-copyright">© 2026 Ligon-Razon Solutions. All rights reserved.</p>
   </div>
-  <p class="footer-copyright">© 2026 Ligon-Razon Solutions</p>
 </footer>
 
 <script>
@@ -604,7 +243,7 @@
         entry.target.classList.add("appear");
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
   faders.forEach(el => observer.observe(el));
 
   const lightbox = document.getElementById("lightbox");
