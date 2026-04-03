@@ -9,497 +9,173 @@
 <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-.about-page-section {
-  padding: 110px 8% 100px;
-  padding-top: 120px;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at top right, rgba(82, 169, 185, 0.18), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(42, 149, 125, 0.16), transparent 32%),
-    linear-gradient(135deg, #f8fcfc 0%, #eef8f8 35%, #f7fbfb 70%, #ffffff 100%);
-}
-
-@media (max-width: 900px) {
-  .about-page-section { padding-top: 100px; }
-}
-
-.about-page-section::before,
-.about-page-section::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.about-page-section::before {
-  width: 420px;
-  height: 420px;
-  top: -120px;
-  right: -80px;
-  background: rgba(82, 169, 185, 0.20);
-}
-
-.about-page-section::after {
-  width: 380px;
-  height: 380px;
-  bottom: -120px;
-  left: -60px;
-  background: rgba(42, 149, 125, 0.18);
-}
-
-.about-container { position: relative; z-index: 2; }
-
-.page-intro {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.page-intro .eyebrow {
-  display: inline-block;
-  margin-bottom: 18px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #2A957D;
-  background: rgba(255,255,255,0.55);
-  border: 1px solid rgba(82, 169, 185, 0.28);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 10px 24px rgba(42,149,125,0.08);
-}
-
-.page-intro h1 {
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1.18;
-  color: #000000;
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.page-intro h1 span {
-  color: #2A957D;
-  font-weight: 400;
-}
-
-.glass-block {
-  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62));
-  border: 1px solid rgba(82,169,185,0.18);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 18px 40px rgba(42,149,125,0.10);
-  border-radius: 30px;
-}
-
-.story-section {
-  padding: 38px 34px;
-  margin-bottom: 32px;
-}
-
-.story-section p {
-  font-size: 16px;
-  line-height: 1.9;
-  color: #3f4b4d;
-  margin-bottom: 18px;
-}
-
-.story-section p:last-child { margin-bottom: 0; }
-
-.dual-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.info-card {
-  padding: 32px 28px;
-  position: relative;
-  overflow: hidden;
-}
-
-.info-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(82,169,185,0.05), rgba(42,149,125,0.05));
-  pointer-events: none;
-}
-
-.info-card h2 {
-  font-size: 28px;
-  margin-bottom: 18px;
-  color: #000000;
-  position: relative;
-  z-index: 1;
-}
-
-.info-card p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #3f4b4d;
-  margin-bottom: 14px;
-  position: relative;
-  z-index: 1;
-}
-
-.info-card p:last-child { margin-bottom: 0; }
-
-.section-heading {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin: 10px 0 24px 0;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.58);
-  border: 1px solid rgba(82,169,185,0.18);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 14px 30px rgba(42,149,125,0.08);
-  color: #000000;
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.section-heading i {
-  font-size: 24px;
-  color: #52A9B9;
-}
-
-.founders-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
-  margin-bottom: 40px;
-}
-
-.person-card {
-  overflow: hidden;
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62));
-  border: 1px solid rgba(82,169,185,0.18);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 18px 40px rgba(42,149,125,0.10);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-.person-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(42,149,125,0.30);
-  box-shadow: 0 24px 50px rgba(42,149,125,0.16);
-}
-
-.person-image {
-  position: relative;
-  aspect-ratio: 4/4.4;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(82,169,185,0.12), rgba(42,149,125,0.12));
-  border-bottom: 1px solid rgba(82,169,185,0.12);
-}
-
-.person-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.person-image .filename {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
-  z-index: 2;
-  max-width: calc(100% - 24px);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-family: monospace;
-  letter-spacing: 0.4px;
-  color: #FFFFFF;
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.16);
-  backdrop-filter: blur(8px);
-}
-
-.person-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.14), rgba(0,0,0,0.02), transparent 45%);
-  pointer-events: none;
-}
-
-.person-info {
-  padding: 18px 18px 20px;
-  text-align: center;
-}
-
-.person-info h3 {
-  font-size: 18px;
-  color: #000000;
-  margin-bottom: 6px;
-  line-height: 1.35;
-}
-
-.person-info p {
-  font-size: 14px;
-  color: #2A957D;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.hipaa-section {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 28px;
-  align-items: center;
-  padding: 30px;
-}
-
-.hipaa-logo-box {
-  position: relative;
-  aspect-ratio: 1/1;
-  border-radius: 26px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(82,169,185,0.12), rgba(42,149,125,0.12));
-  border: 1px solid rgba(82,169,185,0.14);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hipaa-logo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 18px;
-  display: block;
-}
-
-.hipaa-logo-box .filename {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
-  z-index: 2;
-  max-width: calc(100% - 24px);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-family: monospace;
-  letter-spacing: 0.4px;
-  color: #FFFFFF;
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.16);
-  backdrop-filter: blur(8px);
-}
-
-.hipaa-content h2 {
-  font-size: 30px;
-  color: #000000;
-  margin-bottom: 12px;
-}
-
-.hipaa-content p {
-  font-size: 16px;
-  line-height: 1.85;
-  color: #3f4b4d;
-}
-
-@media (max-width: 1000px) {
-  .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-@media (max-width: 800px) {
-  .dual-grid,
-  .founders-grid,
-  .hipaa-section { grid-template-columns: 1fr; }
-
-  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 700px) {
-  .about-page-section { padding: 100px 5%; }
-  .page-intro h1 { font-size: 38px; }
-  .section-heading { font-size: 24px; padding: 12px 16px; }
-  .story-section,
-  .info-card,
-  .hipaa-section { padding: 24px 20px; }
-}
-
-@media (max-width: 520px) {
-  .team-grid { grid-template-columns: 1fr; }
-  .page-intro h1 { font-size: 31px; }
-  .section-heading { width: 100%; justify-content: flex-start; }
-}
-</style>
 </head>
 <body>
 
-<header class="header" id="header">
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="Ligon-Razon Solutions">
-    </div>
+<header class="header inner-header" id="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Ligon-Razon Solutions">
+      </div>
 
-    <div class="menu-toggle" id="menuToggle">☰</div>
+      <div class="menu-toggle" id="menuToggle">☰</div>
 
-    <div class="nav-container" id="navContainer">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a class="active" href="about.html">About</a></li>
-        <li class="mobile-contact-item"><a href="contact.html" class="mobile-contact-btn">Contact us</a></li>
-      </ul>
-    </div>
+      <div class="nav-container" id="navContainer">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a class="active" href="about.html">About</a></li>
+          <li class="mobile-contact-item"><a href="contact.html" class="mobile-contact-btn">Contact us</a></li>
+        </ul>
+      </div>
 
-    <a href="contact.html" class="contact-btn">Contact us</a>
-  </nav>
+      <a href="contact.html" class="contact-btn">Contact us</a>
+    </nav>
+  </div>
 </header>
 
 <div class="nav-overlay" id="navOverlay"></div>
 
-<section class="about-page-section">
-  <div class="about-container">
+<main class="page-shell">
+  <section class="section-space">
+    <div class="container">
 
-    <div class="page-intro fade-up">
-      <span class="eyebrow">who we are</span>
-      <h1>Building trusted teams <span>for growing businesses</span></h1>
-    </div>
-
-    <div class="story-section glass-block fade-up">
-      <p><strong>About</strong></p>
-      <p>Ligon-Razon Solutions is a Philippines-based company that redefines operational support for businesses across the globe. Spearheaded by Mico Joy Ligon and Gene Patrick Razon, we utilize talent for team-building, operations, and business transformation in a unique way.</p>
-      <p>Throughout the years of working with US and UK-based startups and medium-sized companies, we found a better approach to helping businesses achieve their goals while also uplifting the best of Filipino talent. In our infancy stage, we simply referred skilled workers to trusted clients. However, we quickly learned that clients weren’t only seeking talent, but talent that upholds the values and approach the company is built upon.</p>
-      <p>As a result of this realization, we kick-started Ligon-Razon Solutions, where referring individuals is just the tip of the iceberg – we also train, oversee, and grow teams according to the unique needs of each business. We also recognize the need to understand your business inside and out, uncover untapped potential, and curate the right teams to elevate your operations to new heights.</p>
-    </div>
-
-    <div class="dual-grid">
-      <div class="info-card glass-block fade-up">
-        <h2>Mission</h2>
-        <p>To equip businesses worldwide with professional solutions to their operations while creating remote opportunities for talented individuals to grow and thrive professionally.</p>
-        <p>Our mission is to create partnerships with businesses worldwide and guide them with the right professional operational solutions to unlock their full business potential.</p>
+      <div class="page-intro fade-up">
+        <span class="eyebrow">who we are</span>
+        <h1>Building trusted teams <span>for growing businesses</span></h1>
       </div>
 
-      <div class="info-card glass-block fade-up">
-        <h2>Vision</h2>
-        <p>To be a highly trusted partner for businesses and their operations worldwide, renowned for building and uplifting a skilled team of professionals to deliver customized operational excellence.</p>
-        <p>Our vision is to demonstrate that local Filipino ingenuity, work ethic, and heart can be recognized as a solution to growing business opportunities across the globe.</p>
+      <div class="story-section glass-block fade-up">
+        <p><strong>About</strong></p>
+        <p>Ligon-Razon Solutions is a Philippines-based company that redefines operational support for businesses across the globe. Spearheaded by Mico Joy Ligon and Gene Patrick Razon, we utilize talent for team-building, operations, and business transformation in a unique way.</p>
+        <p>Throughout the years of working with US and UK-based startups and medium-sized companies, we found a better approach to helping businesses achieve their goals while also uplifting the best of Filipino talent. In our infancy stage, we simply referred skilled workers to trusted clients. However, we quickly learned that clients weren’t only seeking talent, but talent that upholds the values and approach the company is built upon.</p>
+        <p>As a result of this realization, we kick-started Ligon-Razon Solutions, where referring individuals is just the tip of the iceberg – we also train, oversee, and grow teams according to the unique needs of each business. We also recognize the need to understand your business inside and out, uncover untapped potential, and curate the right teams to elevate your operations to new heights.</p>
       </div>
-    </div>
 
-    <div class="section-heading fade-up">
-      <i class="fas fa-user-tie"></i> Meet the Founders
-    </div>
-
-    <div class="founders-grid">
-      <div class="person-card fade-up">
-        <div class="person-image">
-          <img src="images/founder_01.jpg" alt="Mico Joy Ligon">
-          <span class="filename">founder_01.jpg</span>
+      <div class="dual-grid">
+        <div class="info-card glass-card fade-up">
+          <h2>Mission</h2>
+          <p>To equip businesses worldwide with professional solutions to their operations while creating remote opportunities for talented individuals to grow and thrive professionally.</p>
+          <p>Our mission is to create partnerships with businesses worldwide and guide them with the right professional operational solutions to unlock their full business potential.</p>
         </div>
-        <div class="person-info">
-          <h3>Mico Joy Ligon</h3>
-          <p>Co-Founder</p>
+
+        <div class="info-card glass-card fade-up">
+          <h2>Vision</h2>
+          <p>To be a highly trusted partner for businesses and their operations worldwide, renowned for building and uplifting a skilled team of professionals to deliver customized operational excellence.</p>
+          <p>Our vision is to demonstrate that local Filipino ingenuity, work ethic, and heart can be recognized as a solution to growing business opportunities across the globe.</p>
         </div>
       </div>
 
-      <div class="person-card fade-up">
-        <div class="person-image">
-          <img src="images/founder_02.jpg" alt="Gene Patrick Razon">
-          <span class="filename">founder_02.jpg</span>
+      <div class="section-heading fade-up">
+        <i class="fas fa-user-tie"></i> Meet the Founders
+      </div>
+
+      <div class="founders-grid">
+        <div class="person-card fade-up">
+          <div class="person-image">
+            <img src="images/founder_01.jpg" alt="Mico Joy Ligon">
+            <span class="filename">founder_01.jpg</span>
+          </div>
+          <div class="person-info">
+            <h3>Mico Joy Ligon</h3>
+            <p>Co-Founder</p>
+          </div>
         </div>
-        <div class="person-info">
-          <h3>Gene Patrick Razon</h3>
-          <p>Co-Founder</p>
+
+        <div class="person-card fade-up">
+          <div class="person-image">
+            <img src="images/founder_02.jpg" alt="Gene Patrick Razon">
+            <span class="filename">founder_02.jpg</span>
+          </div>
+          <div class="person-info">
+            <h3>Gene Patrick Razon</h3>
+            <p>Co-Founder</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading fade-up">
+        <i class="fas fa-users"></i> Our Team
+      </div>
+
+      <div class="team-grid">
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_01.jpg" alt="Team Member 01"><span class="filename">team_01.jpg</span></div><div class="person-info"><h3>Team Member 01</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_02.jpg" alt="Team Member 02"><span class="filename">team_02.jpg</span></div><div class="person-info"><h3>Team Member 02</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_03.jpg" alt="Team Member 03"><span class="filename">team_03.jpg</span></div><div class="person-info"><h3>Team Member 03</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_04.jpg" alt="Team Member 04"><span class="filename">team_04.jpg</span></div><div class="person-info"><h3>Team Member 04</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_05.jpg" alt="Team Member 05"><span class="filename">team_05.jpg</span></div><div class="person-info"><h3>Team Member 05</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_06.jpg" alt="Team Member 06"><span class="filename">team_06.jpg</span></div><div class="person-info"><h3>Team Member 06</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_07.jpg" alt="Team Member 07"><span class="filename">team_07.jpg</span></div><div class="person-info"><h3>Team Member 07</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_08.jpg" alt="Team Member 08"><span class="filename">team_08.jpg</span></div><div class="person-info"><h3>Team Member 08</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_09.jpg" alt="Team Member 09"><span class="filename">team_09.jpg</span></div><div class="person-info"><h3>Team Member 09</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_10.jpg" alt="Team Member 10"><span class="filename">team_10.jpg</span></div><div class="person-info"><h3>Team Member 10</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_11.jpg" alt="Team Member 11"><span class="filename">team_11.jpg</span></div><div class="person-info"><h3>Team Member 11</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_12.jpg" alt="Team Member 12"><span class="filename">team_12.jpg</span></div><div class="person-info"><h3>Team Member 12</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_13.jpg" alt="Team Member 13"><span class="filename">team_13.jpg</span></div><div class="person-info"><h3>Team Member 13</h3><p>Title / Role</p></div></div>
+        <div class="person-card fade-up"><div class="person-image"><img src="images/team_14.jpg" alt="Team Member 14"><span class="filename">team_14.jpg</span></div><div class="person-info"><h3>Team Member 14</h3><p>Title / Role</p></div></div>
+      </div>
+
+      <div class="section-heading fade-up">
+        <i class="fas fa-shield-heart"></i> HIPAA Certified
+      </div>
+
+      <div class="hipaa-section glass-card fade-up">
+        <div class="hipaa-logo-box">
+          <img src="images/hipaa-logo.png" alt="HIPAA Certification Logo">
+          <span class="filename">hipaa-logo.png</span>
+        </div>
+        <div class="hipaa-content">
+          <h2>Committed to secure and compliant operations</h2>
+          <p>We are HIPAA certified and committed to maintaining high standards of data privacy, confidentiality, and operational integrity. This reflects our dedication to handling sensitive information responsibly while supporting businesses with professionalism, trust, and compliance-driven processes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass-card fade-up">
+        <h2>Ready to work with a dependable support partner?</h2>
+        <p>Let’s talk about how Ligon-Razon Solutions can help strengthen your operations, support your team, and move your business forward.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="cta-btn">Get in Touch</a>
         </div>
       </div>
     </div>
-
-    <div class="section-heading fade-up">
-      <i class="fas fa-users"></i> Our Team
-    </div>
-
-    <div class="team-grid">
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_01.jpg" alt="Team Member 01"><span class="filename">team_01.jpg</span></div><div class="person-info"><h3>Team Member 01</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_02.jpg" alt="Team Member 02"><span class="filename">team_02.jpg</span></div><div class="person-info"><h3>Team Member 02</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_03.jpg" alt="Team Member 03"><span class="filename">team_03.jpg</span></div><div class="person-info"><h3>Team Member 03</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_04.jpg" alt="Team Member 04"><span class="filename">team_04.jpg</span></div><div class="person-info"><h3>Team Member 04</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_05.jpg" alt="Team Member 05"><span class="filename">team_05.jpg</span></div><div class="person-info"><h3>Team Member 05</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_06.jpg" alt="Team Member 06"><span class="filename">team_06.jpg</span></div><div class="person-info"><h3>Team Member 06</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_07.jpg" alt="Team Member 07"><span class="filename">team_07.jpg</span></div><div class="person-info"><h3>Team Member 07</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_08.jpg" alt="Team Member 08"><span class="filename">team_08.jpg</span></div><div class="person-info"><h3>Team Member 08</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_09.jpg" alt="Team Member 09"><span class="filename">team_09.jpg</span></div><div class="person-info"><h3>Team Member 09</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_10.jpg" alt="Team Member 10"><span class="filename">team_10.jpg</span></div><div class="person-info"><h3>Team Member 10</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_11.jpg" alt="Team Member 11"><span class="filename">team_11.jpg</span></div><div class="person-info"><h3>Team Member 11</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_12.jpg" alt="Team Member 12"><span class="filename">team_12.jpg</span></div><div class="person-info"><h3>Team Member 12</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_13.jpg" alt="Team Member 13"><span class="filename">team_13.jpg</span></div><div class="person-info"><h3>Team Member 13</h3><p>Title / Role</p></div></div>
-      <div class="person-card fade-up"><div class="person-image"><img src="images/team_14.jpg" alt="Team Member 14"><span class="filename">team_14.jpg</span></div><div class="person-info"><h3>Team Member 14</h3><p>Title / Role</p></div></div>
-    </div>
-
-    <div class="section-heading fade-up">
-      <i class="fas fa-shield-heart"></i> HIPAA Certified
-    </div>
-
-    <div class="hipaa-section glass-block fade-up">
-      <div class="hipaa-logo-box">
-        <img src="images/hipaa-logo.png" alt="HIPAA Certification Logo">
-        <span class="filename">hipaa-logo.png</span>
-      </div>
-      <div class="hipaa-content">
-        <h2>Committed to secure and compliant operations</h2>
-        <p>We are HIPAA certified and committed to maintaining high standards of data privacy, confidentiality, and operational integrity. This reflects our dedication to handling sensitive information responsibly while supporting businesses with professionalism, trust, and compliance-driven processes.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
+</main>
 
 <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="Ligon-Razon Solutions">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Ligon-Razon Solutions">
+      </div>
+
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a></p>
+        <p>Phone: <a href="tel:+639688715225">+63 968 871 5225</a></p>
+        <p>Office: Unit 707, Avida One Park Drive, BGC, Taguig City</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
 
-    <div class="footer-column footer-contact">
-      <p>Email: <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a></p>
-      <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-    </div>
-
-    <div class="footer-column footer-social">
-      <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
+    <p class="footer-copyright">© 2026 Ligon-Razon Solutions. All rights reserved.</p>
   </div>
-
-  <p class="footer-copyright">© 2026 Ligon-Razon Solutions</p>
 </footer>
 
 <script>
@@ -537,11 +213,11 @@
   const faders = document.querySelectorAll(".fade-up");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
         entry.target.classList.add("appear");
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
 
   faders.forEach(el => observer.observe(el));
 })();
