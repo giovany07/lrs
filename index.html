@@ -9,41 +9,42 @@
   <link rel="shortcut icon" href="images/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="images/favicon.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header home-header" id="header">
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="Ligon-Razon Solutions">
-      </div>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo.png" alt="Ligon-Razon Solutions">
+        </div>
 
-      <div class="menu-toggle" id="menuToggle">☰</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
 
-      <div class="nav-container" id="navContainer">
-        <ul class="nav-links">
-          <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="mobile-contact-item">
-            <a href="contact.html" class="mobile-contact-btn">Contact us</a>
-          </li>
-        </ul>
-      </div>
+        <div class="nav-container" id="navContainer">
+          <ul class="nav-links">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="mobile-contact-item">
+              <a href="contact.html" class="mobile-contact-btn">Contact us</a>
+            </li>
+          </ul>
+        </div>
 
-      <a href="contact.html" class="contact-btn">Contact us</a>
-    </nav>
+        <a href="contact.html" class="contact-btn">Contact us</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- OVERLAY -->
   <div class="nav-overlay" id="navOverlay"></div>
 
-  <!-- HERO -->
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="images/video.mp4" type="video/mp4">
@@ -52,39 +53,120 @@
 
     <div class="hero-overlay"></div>
 
-    <div class="hero-content fade-up">
-      <h1>Launch. Run. Scale</h1>
-      <p class="description">
-        Run your business with seamless, day-to-day support that takes work off your plate.
-      </p>
-      <a href="contact.html" class="start-btn">Schedule Consultation <span>→</span></a>
+    <div class="container">
+      <div class="hero-content fade-up">
+
+        <h1>Launch. Run. Scale.</h1>
+
+        <p class="description">
+          Run your business with seamless, day-to-day support that takes work off your plate.
+        </p>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="start-btn">Schedule Consultation <span>→</span></a>
+          <a href="services.html" class="secondary-btn">Explore Services</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <main class="page-shell">
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card glass-card fade-up">
+            <div class="stat-number">Global</div>
+            <div class="stat-title">Client Support Mindset</div>
+            <p>Professional operational support shaped by real experience working with growing businesses across international markets.</p>
+          </div>
+
+          <div class="stat-card glass-card fade-up">
+            <div class="stat-number">Custom</div>
+            <div class="stat-title">Business Solutions</div>
+            <p>Every engagement is tailored to your workflow, team structure, priorities, and long-term business goals.</p>
+          </div>
+
+          <div class="stat-card glass-card fade-up">
+            <div class="stat-number">Trusted</div>
+            <div class="stat-title">Remote Teams</div>
+            <p>We help businesses build dependable support systems through skilled talent, oversight, and operational excellence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space">
+      <div class="container">
+        <div class="section-intro fade-up">
+          <span class="eyebrow">featured services</span>
+          <h2>Support designed for <span>growing agencies and businesses</span></h2>
+          <p>From daily operational assistance to strategic process support, we help businesses stay organized, efficient, and ready to scale.</p>
+        </div>
+
+        <div class="home-services-grid">
+          <div class="home-service-card glass-card fade-up">
+            <div class="home-service-icon"><i class="fas fa-headset"></i></div>
+            <h3>Customer Service Support</h3>
+            <p>Deliver responsive, dependable service that strengthens trust and improves the overall client experience.</p>
+          </div>
+
+          <div class="home-service-card glass-card fade-up">
+            <div class="home-service-icon"><i class="fas fa-user-tie"></i></div>
+            <h3>Virtual Assistant Services</h3>
+            <p>Stay focused on growth while we help manage scheduling, coordination, admin support, and day-to-day operations.</p>
+          </div>
+
+          <div class="home-service-card glass-card fade-up">
+            <div class="home-service-icon"><i class="fas fa-users"></i></div>
+            <h3>Custom Team Building</h3>
+            <p>Build capable, aligned support teams tailored to your workflows, service standards, and business direction.</p>
+          </div>
+        </div>
+
+        <div class="section-actions fade-up">
+          <a href="services.html" class="cta-btn">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card glass-card fade-up">
+          <h2>Ready to scale your operations with confidence?</h2>
+          <p>Let’s build a stronger support system for your business with solutions tailored to your goals, processes, and growth plans.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="cta-btn">Contact Us Today</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="images/logo.png" alt="Ligon-Razon Solutions">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Ligon-Razon Solutions">
+        </div>
+
+        <div class="footer-contact">
+          <p>Email: <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a></p>
+          <p>Phone: <a href="tel:+639688715225">+63 968 871 5225</a></p>
+          <p>Office: Unit 707, Avida One Park Drive, BGC, Taguig City</p>
+        </div>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
 
-      <div class="footer-column footer-contact">
-        <p>Email: <a href="mailto:info@ligonrazon.com">info@ligonrazon.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-      </div>
-
-      <div class="footer-column footer-social">
-        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
+      <p class="footer-copyright">© 2026 Ligon-Razon Solutions. All rights reserved.</p>
     </div>
-
-    <p class="footer-copyright">© 2026 Ligon-Razon Solutions</p>
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     (function () {
       const header = document.getElementById("header");
@@ -104,13 +186,16 @@
         document.body.style.overflow = "hidden";
       }
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 60) {
+      function handleHeaderScroll() {
+        if (window.scrollY > 40) {
           header.classList.add("shrink");
         } else {
           header.classList.remove("shrink");
         }
-      });
+      }
+
+      handleHeaderScroll();
+      window.addEventListener("scroll", handleHeaderScroll);
 
       toggle.addEventListener("click", () => {
         if (nav.classList.contains("show")) {
@@ -133,7 +218,7 @@
             entry.target.classList.add("appear");
           }
         });
-      });
+      }, { threshold: 0.15 });
 
       faders.forEach(el => observer.observe(el));
     })();
